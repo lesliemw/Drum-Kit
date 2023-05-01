@@ -9,13 +9,15 @@ for (let i = 0; i < drumButton.length; i++) {
     makeSound(buttonInnerHTML);
 
     buttonAnimation(buttonInnerHTML);
-
-    document.addEventListener("keydown" , function(event) {
-        makeSound(event.key);
-        buttonAnimation(event.key);
-    })
   });
 }
+
+
+document.addEventListener("keydown" , function(event) {
+  makeSound(event.key);
+
+  buttonAnimation(event.key);
+});
 
 // Detecting keyboard press
 
@@ -67,7 +69,7 @@ function buttonAnimation(currentKey){
   let activeButton = document.querySelector("." + currentKey);
   
   activeButton.classList.add("pressed");
-  setTimeout(function (){
-    activeButton.classList.remove("pressed")
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
   }, 100);
 }
